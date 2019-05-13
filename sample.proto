@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service SampleServer {
+    rpc Similarity(Image) returns (Similarity_Factor) {}
+}
+
+message Similarity_Factor {
+    double score = 1;
+}
+
+message Image {
+    repeated double rgb1 = 1 [packed=true];
+    repeated double rgb2 = 2 [packed=true];
+}
